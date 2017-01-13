@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-4">
+      <h1>Post</h1>
+
+           <div class="text-right">
+  <%= link_to "Publicar Post", new_post_path, class: "btn btn-primary" %>
+</div>
+
+
+         <% @posts.each do |post| %>
+          <tr>
+            
+            <h1><%= post.tittle %></h1>
+            <p><%= post.body %></p>
+         
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
