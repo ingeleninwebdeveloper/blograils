@@ -38,9 +38,26 @@ class PostsController < ApplicationController
   	@post = Post.find(params[:id])
 	end
 
+	def update
+ 	 @post = Post.find(params[:id])
+ 	 if @post.update(post_params)
+    redirect_to posts_path, notice: "El post ha sido modificado con éxito"
+  	else
+    render :edit
+  		end
+	end
+
+	def destroy
+  		post = Post.find(params[:id])
+  		post.destroy
+
+  		redirect_to posts_path, notice: "El Post fue eliminado con éxito"
+	end
+
+
 
 	private
-  def product_params
+  def post_params
     params.require(:post).permit(:body, :tittle)
   end
 
