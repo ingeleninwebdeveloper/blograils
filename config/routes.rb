@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
+  root 'posts#index'
+  delete 'logout', to: 'sessions#destroy'
+
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+
+
  resources :users, only: [:new, :create]
-	root 'posts#index'
+	
 
 
 	get 'posts', to: 'posts#index'
