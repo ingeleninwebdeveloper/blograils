@@ -28,6 +28,12 @@ class PostsController < ApplicationController
 
 	end
 
+	def show
+
+	@posts = Post.find(params[:id])	
+
+	end
+
 
 	private
   def product_params
