@@ -10,4 +10,8 @@
 #
 
 class Post < ApplicationRecord
+
+validates :body, presence: true
+validates :tittle, presence: true
+
 end
