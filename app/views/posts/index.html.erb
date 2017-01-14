@@ -21,7 +21,7 @@
       <%month= a.join('').capitalize %>
       
       <small>(<%='el'+' '+array[0]+' '+'de'+' '+month+' '+'del'+' '+array[3] %>)</small>
-            <span class="post-description"><%= post.body %></span>
+            <span class="post-description"><%= post.body.first(250) %></span>
           </div>
 
           <div class="post-comments">

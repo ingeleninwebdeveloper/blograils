@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 		@post.user = current_user
 
   			if @post.save
-    		redirect_to posts_path, notice: "El producto fue publicado con éxito"
+    		redirect_to posts_path, notice: "El post fue publicado con éxito"
  			 else
   		  render :new
  		end
