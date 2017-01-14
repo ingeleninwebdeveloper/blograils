@@ -9,6 +9,11 @@
             <span class="post-title"><%= link_to post.tittle, post %></span>
             <span class="post-description"><%= post.body %></span>
           </div>
+
+          <div class="post-comments">
+  <span class="glyphicon glyphicon-comment"></span>
+  <span class="comment-count"><%= post.comments.count %></span>
+</div>
         </div>
         <% end %>
       </div>
