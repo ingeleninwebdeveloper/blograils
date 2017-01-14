@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'posts#index'
+ 
   delete 'logout', to: 'sessions#destroy'
 
 
