@@ -15,9 +15,9 @@ class Post < ApplicationRecord
 	belongs_to :user
 	has_many :comments
 
-validates :body, presence: true
-validates :tittle, presence: true
-
+validates :body, presence: true 
+validates :tittle, presence: true 
+validates :body, length: {minimum: 250, :message => "debe tener minimo 250 caracteres"}
 
 
 end

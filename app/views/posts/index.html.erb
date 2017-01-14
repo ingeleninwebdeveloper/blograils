@@ -7,6 +7,20 @@
         <div class="post clearfix">
           <div class="post-details">
             <span class="post-title"><%= link_to post.tittle, post %></span>
+            <span class="post-user">Publicado por: <%= post.user.try(:name) %>
+            <% date=post.created_at.strftime("%d %B de %Y") %>
+      <%array=date.split(' ')%>
+      <%downcased=array[1].downcase%>
+      <%months={january: "enero", february:"febrero", march:"marzo", april: "abril"}%>
+      <% a=[] %>
+      <% months.each do |key, value| %>
+      <%   if downcased==key.to_s %>
+      <%     a << value %>
+      <%   end %>
+      <% end %>
+      <%month= a.join('').capitalize %>
+      
+      <small>(<%='el'+' '+array[0]+' '+'de'+' '+month+' '+'del'+' '+array[3] %>)</small>
             <span class="post-description"><%= post.body %></span>
           </div>
 

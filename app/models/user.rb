@@ -16,9 +16,10 @@ class User < ActiveRecord::Base
 	has_many :posts
 	has_many :comments
 
-	validates :email, uniqueness: true, format: /@/
+	validates :email, uniqueness: true, format: /@/ 
 validates :password, presence: true, on: :create
 validates :password, length: { in: 6..20 }, allow_nil: true
 validates :name, presence: true
+validates :email, uniqueness: {case_sensitive: false ,message: "ya esta registrado"}
 	
 end
