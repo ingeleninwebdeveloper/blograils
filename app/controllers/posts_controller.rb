@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
 	def create
 
-		@post = Post.new(product_params)
+		@post = Post.new(post_params)
   			if @post.save
     		redirect_to posts_path, notice: "El producto fue publicado con éxito"
  			 else
